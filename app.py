@@ -1,7 +1,7 @@
-from app import app
+from flask import Flask
 
-def test_homepage():
-    tester = app.test_client()
-    # print("Testing homepage...")
-    response = tester.get("/")
-    assert response.status_code == 200
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello, Flask!"
